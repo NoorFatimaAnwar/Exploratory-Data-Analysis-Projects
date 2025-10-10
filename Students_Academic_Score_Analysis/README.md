@@ -1,117 +1,163 @@
-# 📊 Sales Price Prediction & Analysis
+# 🧠 Student Lifestyle and Academic Performance Analysis
 
-This project predicts **product sales based on advertising budgets** (TV, Radio, Newspaper) using machine learning models.  
-It also provides **feature importance analysis**, **what-if budget scenarios**, and an **interactive prediction tool**.
+## 📘 Project Overview
 
----
+This project explores how lifestyle factors — such as **sleep**, **exercise**, **social media use**, and **study habits** — influence students’ academic performance.
 
-## 🚀 Features
+Using a **synthetic dataset of 5,000 students generated with ChatGPT**, the analysis includes data cleaning, missing value handling, outlier detection, and **Exploratory Data Analysis (EDA)** to uncover relationships between lifestyle behaviors and academic outcomes.
 
-- **Baseline Model** – Simple mean-based predictor  
-- **ML Models** – Linear Regression, Ridge Regression, Support Vector Machine (SVM)  
-- **Evaluation** – Metrics (MAE, RMSE, R²) + Actual vs Predicted plots  
-- **Feature Importance** – Using permutation importance  
-- **Scenario Analysis** – Simulate budget changes (e.g., +10% TV, -20% Newspaper)  
-- **Interactive Prediction** – Enter your own ad spend to predict sales  
+> The dataset was intentionally designed to contain imperfections similar to real-world data, allowing practice in realistic data preprocessing and analysis workflows.
 
 ---
 
-## 🗂️ Project Structure
-├── data/
+## 🎯 Problem Statement
 
-│ └── Advertising.csv # Dataset
+Analyze how different lifestyle factors (sleep, exercise, social media use, and study habits) influence students’ academic performance.
 
-├── src/
-
-│ ├── preprocess.py # Load, split, scale data
-
-│ ├── baseline.py # Baseline model
-
-│ ├── models.py # Train models (LR, Ridge, SVM)
-
-│ ├── evaluation.py # Metrics + plots
-
-│ ├── feature_importance.py # Permutation importance
-
-│ ├── predict.py # Predict sales for user inputs
-
-│ ├── scenario.py # Budget adjustment scenarios
-
-├── notebook/
-
-│ ├── Sales_Prediction.ipynb # Main notebook (analysis + demo)
-  
-└── README.md # Project documentation
+**Goal:** Identify which lifestyle behaviors most strongly affect academic success and understand their correlations and patterns through visual and statistical methods.
 
 ---
 
-## 📦 Dependencies
+## 🧩 Dataset Details
 
-- pandas  
-- numpy  
-- scikit-learn  
-- matplotlib  
-- ipywidgets (for interactive input in Jupyter Notebook)  
+**File name:** `students_lifestyle_5000.csv`  
+**Source:** Generated using ChatGPT for educational and analytical purposes
+
+### Overview
+
+| Property | Details |
+|-----------|----------|
+| **Rows** | 5,000 |
+| **Columns** | Mixed numerical and categorical variables |
+| **Imperfections** | Missing values (~6%), typos, inconsistent labels, outliers, invalid values, duplicates |
+
+**Intentional Data Imperfections:**
+- Missing values (~6% across several columns)
+- Typos and inconsistent categorical labels (e.g., `femmale`, `fmale`)
+- Lowercase/variant entries in `Stress_Level`
+- Duplicate `Student_ID`s
+- Outliers in study/sleep/screen time
+- Invalid values (e.g., attendance > 100%)
+
+### Column Descriptions
+
+| Column Name | Type | Description |
+|--------------|------|-------------|
+| Age | Numeric | Age of the student |
+| Gender | Categorical | Student gender |
+| Study_Hours_Per_Day | Numeric | Average hours spent studying daily |
+| Sleep_Hours | Numeric | Average sleep hours per day |
+| Physical_Activity_Hours | Numeric | Daily exercise hours |
+| Screen_Time_Hours | Numeric | Daily screen/social media time |
+| Social_Activity_Score | Numeric | Social interaction frequency score |
+| Mental_Wellbeing_Score | Numeric | Overall mental wellness score |
+| Attendance_Rate | Numeric | Class attendance percentage |
+| Stress_Level | Categorical | Low / Medium / High |
+| Academic_Score | Numeric | Final academic performance score |
 
 ---
 
-## ▶️ Usage
+## 🧹 Data Cleaning Steps
 
-### 1. Run Jupyter Notebook
+- Removed unnecessary columns (e.g., `Student_ID`)
+- Handled missing values:
+  - **KNN Imputer** for numeric data  
+  - **Mode imputation** for categorical data
+- Fixed inconsistent categorical entries (e.g., `femmale → Female`)
+- Standardized `Stress_Level` categories
+- Removed duplicates based on `Student_ID`
+- Detected and treated outliers using **IQR (Interquartile Range)** method
+- Capped invalid values (e.g., attendance > 100%)
+- Verified data distributions after cleaning
+
+---
+
+## 📊 Exploratory Data Analysis (EDA)
+
+### 🔹 Univariate Analysis
+- Examined individual feature distributions using **histograms** and **countplots**
+- Checked data balance and detected skewed variables
+
+### 🔹 Bivariate Analysis
+Explored pairwise relationships using **scatterplots**, **violin plots**, and **boxplots**.
+
+**Key Findings:**
+- 📈 Study hours show a strong positive correlation with academic performance  
+- 😴 Sleep hours and screen time have weaker relationships  
+- 💆 Lower stress levels correspond to higher academic scores  
+- 🚻 Gender differences were statistically insignificant  
+
+### 🔹 Multivariate Analysis
+- Correlation heatmap revealed:  
+  - **Strongest positive correlation:** `Study_Hours_Per_Day ↔ Academic_Score` (~0.78)  
+  - **Strongest negative correlation:** `Screen_Time_Hours ↔ Mental_Wellbeing_Score` (~−0.20)
+- 3D scatterplots illustrated combined effects of study hours, sleep, and stress.
+
+---
+
+## ⚙️ Feature Engineering
+
+- **One-Hot Encoding** for categorical features (`Gender`, `Stress_Level`)
+- **Feature Scaling** using `StandardScaler`
+- **Feature correlation** and **variance analysis** for feature selection
+
+---
+
+## 🧠 Key Insights
+
+- 📚 Study hours per day is the most influential predictor of academic performance  
+- 📵 High screen time is linked with lower mental well-being  
+- 😌 Stress level inversely impacts performance — lower stress = higher scores  
+- 🚻 Gender and age show minimal impact  
+- ⚖️ Balanced lifestyle habits lead to better academic outcomes  
+
+---
+
+## 🛠️ Technologies Used
+
+| Category | Tools & Libraries |
+|-----------|------------------|
+| **Language** | Python |
+| **Libraries** | pandas, numpy, matplotlib, seaborn, scikit-learn, scipy |
+| **Environment** | Google Colab / Jupyter Notebook |
+| **Techniques** | Data Cleaning, Outlier Detection, Visualization, Correlation Analysis, Feature Engineering |
+
+---
+
+## 📈 Future Improvements
+
+- Develop a **machine learning model** to predict academic performance  
+- Create **interactive dashboards** using Plotly or Power BI  
+- Apply **statistical inference** or **regression analysis** for causal insights  
+
+---
+
+## 📦 How to Run the Project
+
 ```bash
-jupyter notebook Sales_Prediction.ipynb
-```
-### 2. Predict Sales (Interactive)
-Inside the notebook, enter **TV, Radio, and Newspaper ad spends** → get predicted sales instantly.
+# Clone the repository
+git clone https://github.com/<your-username>/student-lifestyle-eda.git
+cd student-lifestyle-eda
 
-### 3. Scenario Analysis
-Test budget changes like:
-- 📺 **+10% TV**  
-- 📰 **-20% Newspaper**  
-- 📻 **+10% Radio**  
-- 📺 **+10% TV** & 📻 **+15% Radio**  
-- 💰 **-10% All spends**  
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Jupyter/Colab notebook
+students_lifestyle_analysis.ipynb
+---
+## 👩‍💻 Author
+
+**Noor Fatima**  
+🎓 *Computer Science Student* | 💡 *Data Science Enthusiast*  
+📍 *Pakistan*  
 
 ---
 
-## 📈 Results
+## ⭐ Project Highlights
 
-- **Baseline model** → acts as benchmark  
-- **SVM model** → best performance (lowest RMSE, highest R²)  
-- **TV & Radio** → most important features  
-- **TV + Radio budgets** → biggest improvement in predicted sales  
-
----
-
-## 📊 Business Insights & Recommendations
-
-Based on scenario testing with the trained model:
-
-- 📺 **TV advertising has the strongest impact on sales**  
-  +10% TV spend → **+0.53 higher average sales**  
-
-- 📻 **Radio advertising is highly effective**  
-  +10% Radio spend → **+0.44 higher sales**  
-
-- 🔗 **Combining TV and Radio yields the best results**  
-  +10% TV & +15% Radio → **+1.22 higher sales** (synergy effect)  
-
-- 📰 **Newspaper advertising has minimal effect**  
-  –20% Newspaper spend → only **–0.02 change in sales**  
-
-- 💰 **Budget cuts directly reduce sales**  
-  –10% across all channels → **–1.00 drop in sales**  
-
-### ✅ Recommendations for Businesses
-- Invest more in **TV and Radio advertising** (highest returns)  
-- Reduce **Newspaper ad spend**, reallocate to TV/Radio  
-- Use a **combined TV + Radio strategy** for maximum impact  
-- Avoid **across-the-board budget cuts**  
-- Follow a **data-driven marketing approach** with continuous monitoring  
+- ✅ **End-to-end realistic EDA workflow** — from messy data to insights  
+- ✅ **Dataset generated with ChatGPT** to simulate real-world imperfections  
+- ✅ **Comprehensive data cleaning** — imputation, outlier handling, and correlation analysis  
+- ✅ **Ready for predictive modeling and academic research**
 
 ---
-
-## 🙌 Author
-
-**Developed by Noor Fatima**  
-🎓 Final-year Computer Science Student | Data Science Projects  
