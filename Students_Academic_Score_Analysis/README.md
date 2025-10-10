@@ -136,13 +136,13 @@ Explored pairwise relationships using **scatterplots**, **violin plots**, and **
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/student-lifestyle-eda.git
-cd student-lifestyle-eda
+https://github.com/NoorFatimaAnwar/Exploratory-Data-Analysis-Projects.git
+cd Exploratory-Data-Analysis-Projects.git
 ```
 
 
 # Run the Jupyter/Colab notebook
-students_lifestyle_analysis.ipynb
+Academic_Score_Analysis.ipynb
 
 ---
 ## 👩‍💻 Author
