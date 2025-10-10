@@ -138,12 +138,12 @@ Explored pairwise relationships using **scatterplots**, **violin plots**, and **
 # Clone the repository
 git clone https://github.com/<your-username>/student-lifestyle-eda.git
 cd student-lifestyle-eda
+```
 
-# Install dependencies
-pip install -r requirements.txt
 
 # Run the Jupyter/Colab notebook
 students_lifestyle_analysis.ipynb
+
 ---
 ## 👩‍💻 Author
 
