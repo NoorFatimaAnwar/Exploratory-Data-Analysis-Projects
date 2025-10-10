@@ -2,7 +2,7 @@
 
 ## 📘 Project Overview
 
-This project explores how lifestyle factors — such as **sleep**, **exercise**, **social media use**, and **study habits** — influence students’ academic performance.
+This project explores how lifestyle factors such as **sleep**, **exercise**, **social media use**, and **study habits** influence students’ academic performance.
 
 Using a **synthetic dataset of 5,000 students generated with ChatGPT**, the analysis includes data cleaning, missing value handling, outlier detection, and **Exploratory Data Analysis (EDA)** to uncover relationships between lifestyle behaviors and academic outcomes.
 
