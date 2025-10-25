@@ -1,4 +1,4 @@
-# 🧠 Student Lifestyle Analysis — Statistical Edition
+# 🧠 Student Academic Score Prediction —> Statistical Edition
 
 ## 📘 Project Overview
 This project explores how different lifestyle factors — including **sleep**, **exercise**, **social media use**, and **study habits** — influence students’ **academic performance**.  
