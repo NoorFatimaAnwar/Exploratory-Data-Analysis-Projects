@@ -1,4 +1,4 @@
-# 🧠 Student Academic Score Prediction —> Statistical Edition
+# 🧠 Student Academic Score Prediction -> Statistical Edition
 
 ## 📘 Project Overview
 This project explores how different lifestyle factors — including **sleep**, **exercise**, **social media use**, and **study habits** — influence students’ **academic performance**.  
@@ -109,17 +109,27 @@ While study hours and attendance have the strongest positive impact, lifestyle b
 Student_Lifestyle_Analysis/
 │
 ├── Academic_Score_Prediction_Statistical_Version/
+
 │   ├── students_lifestyle_5000.csv
+
 │   ├── Academic_Score_statists.ipynb
+
 │   ├── README.md   
 │
 └── Student_Academic_Score_Analysis/
+
     ├── students_lifestyle_5000.csv
+    
     ├── Academic_Score_EDA.ipynb
+    
     ├── README.md
 
+# Run the Jupyter/Colab notebook
+Academic_Score_Statists.ipynb
 
-## 🙌 Author
+---
+## 👩‍💻 Author
 
-**Developed by Noor Fatima**  
-🎓 Final-year Computer Science Student | Data Science Projects  
+**Noor Fatima**  
+🎓 *Computer Science Student* | 💡 *Data Science Enthusiast*  
+📍 *Pakistan* 
