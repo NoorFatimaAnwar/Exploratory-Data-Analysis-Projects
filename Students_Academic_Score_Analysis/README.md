@@ -142,7 +142,7 @@ cd Exploratory-Data-Analysis-Projects.git
 
 
 # Run the Jupyter/Colab notebook
-Academic_Score_Analysis.ipynb
+Academic_Score_EDA.ipynb
 
 ---
 ## 👩‍💻 Author
