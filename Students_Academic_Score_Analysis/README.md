@@ -1,4 +1,4 @@
-# 🧠 Student Lifestyle and Academic Performance Analysis
+# 🧠 Student Academic Score Prediction -> EDA Edition
 
 ## 📘 Project Overview
 
