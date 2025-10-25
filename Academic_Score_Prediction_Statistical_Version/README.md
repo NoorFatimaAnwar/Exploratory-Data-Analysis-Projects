@@ -106,16 +106,17 @@ While study hours and attendance have the strongest positive impact, lifestyle b
 ---
 
 ## 📁 Folder Structure
+
 Student_Lifestyle_Analysis/
-│
+
 ├── Academic_Score_Prediction_Statistical_Version/
 
-│   ├── students_lifestyle_5000.csv
+    ├── students_lifestyle_5000.csv
 
-│   ├── Academic_Score_statists.ipynb
+    ├── Academic_Score_statists.ipynb
 
-│   ├── README.md   
-│
+    ├── README.md   
+
 └── Student_Academic_Score_Analysis/
 
     ├── students_lifestyle_5000.csv
